@@ -1,0 +1,30 @@
+<h1>ROBES</h1>
+<hr/>
+<ul class="list-group list-group-horizontal">
+           
+    <li *ngFor="let a of dre" [ngClass]="['list-group-item', 'zoom']" >
+        
+        <div>
+            <img [src]="a.src"/>
+            
+            <h3>{{a.nom |uppercase}}</h3>
+            <p>
+                
+               reference: {{a.ref}}
+            </p>
+            <hr/>
+            <div>
+            <h3 style="color:purple;">{{a.prix |promo |cush}}</h3>
+            <h4><del> {{a.prix |cush}}</del> </h4>
+            </div>
+            
+            <div class="only-show-on-hover">
+               <hr/>
+                  <button class="btn btn-outline-light text-secondary btn-lg" title="voir plus">
+                  <span class="glyphicon glyphicon-option-horizontal"></span>
+               </button>
+            </div>
+            </div>
+    </li>
+
+</ul>

@@ -1,0 +1,41 @@
+<nav class="navbar">
+    <h1 title="home">CoinBeaute</h1>
+    <ul>
+        <li>
+            <div class="dropdown">
+                <button class="dropbtn"> <a class="nav-link " [routerLink]="['/acceuil']">Acceuil</a></button>
+                
+              </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a >Nos Produits
+                    <span class="glyphicon glyphicon-menu-down"></span></a></button>
+                <div class="dropdown-content">
+                  <a class="nav-link" [routerLink]="['/makeup']">Maquillage</a>
+                  <a class="nav-link" [routerLink]="['/dress']">Robe soiree</a>
+                </div>
+              </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropbtn"> <a class="nav-link" [routerLink]=" ['/ajout']">ajout d'un article</a> 
+                </button>
+                
+              </div>
+        </li>
+    </ul>
+    
+    <div id="sign" >
+        <button class="btn btn-outline-light text-dark btn-lg" title="recherche"(click)="rechercher()">
+            <span class="glyphicon glyphicon-search"></span>
+            </button>
+            <button class="btn btn-outline-light text-dark btn-lg" title="identifiez vous" (click)="log()">
+                <span class="glyphicon glyphicon-user" ></span>
+               </button>
+      </div>
+
+      
+      <hr/>
+      </nav>

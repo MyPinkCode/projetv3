@@ -1,0 +1,10 @@
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration:underline;
+}
+form{
+     max-width: 800px;
+    margin: 50px;}
+div{margin: 20px;}
+button{font-size: 30px;
+       margin-left: 200px;}

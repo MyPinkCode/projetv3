@@ -1,0 +1,16 @@
+li{margin: 30px;}
+.zoom {
+    text-align: center;
+    transition: transform .2s; 
+    margin:50px;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.1); 
+  }
+ 
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration:underline;
+}
