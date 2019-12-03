@@ -1,5 +1,11 @@
 export class Produits
-{   
+{  
+     private _nom:string;
+     private _ref:string;
+      private _src:string;
+    private _prix:number;
+    private _promo:boolean; 
+    private _date:string;
     
     public get nom(): string {
         return this._nom;
@@ -31,11 +37,11 @@ export class Produits
     }
 
 
-    public get dispo(): boolean {
-        return this._dispo;
+    public get promo(): boolean {
+        return this._promo;
     }
-    public set dispo(value: boolean) {
-        this._dispo = value;
+    public set promo(value: boolean) {
+        this._promo = value;
     }
 
 
@@ -45,6 +51,12 @@ export class Produits
     public set date(value: string) {
         this._date = value;
     }
-    constructor(private _nom:string, private _ref:string, private _src:string, private _prix:number,
-                private _dispo:boolean, private _date:string){}
+    constructor(nom:string,ref:string,src:string,prix:number,promo:boolean,d:string){
+        this._nom=nom;
+        this._ref=ref;
+        this._src=src;
+        this._prix=prix;
+        this._promo=promo;
+        this._date=d;
+    }
 }

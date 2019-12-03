@@ -1,0 +1,23 @@
+ul{list-style: none;}
+#cercle {border-radius: 100px;
+    width: 80px;height:80px;
+    background-color: plum;color: white;
+    text-align: center;
+    font-size: 40px;
+  }
+  li div{display: inline-block;margin: 10px;}
+   div span{top:20px}
+   hr{
+	border-top: 1px solid purple;
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+ }
+ .show-scrollTop {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+ }

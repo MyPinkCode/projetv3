@@ -1,1 +1,86 @@
-<p>ajout works!</p>
+<div id="cont">
+<h1>AJOUTER UN ARTICLE</h1>
+<hr/>
+<div [hidden]="submitted" id="for"> 
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+                <div class="form-group">
+                        <label for="type">
+                            votre produit est un :
+                            </label><br>
+                        <select id="type"[(ngModel)]="type" required >
+                            <option value="m">makeup</option>
+                            <option value="d">dress</option>
+                        </select>
+                    </div>
+            <div class="form-group">
+                <label for="ref">
+                    referance du produit
+                </label><br>
+                <input type="text" id="ref" name="ref" [(ngModel)]="ref" #idf="ngModel" required >
+            </div>
+               
+            <div [hidden]="idf.valid||idf.pristine" class="alert alert-danger">
+                referance non valide
+            </div>
+            <div class="form-group">
+                    <label for="libelle">
+                        nom du produit
+                    </label>
+                    <br>
+                    <input type="text" id="libelle" name="lib" [(ngModel)]="nom"  #lib="ngModel" required>
+                </div>
+    
+               <br/>   
+            <div [hidden]="lib.valid||lib.pristine" class="alert alert-danger">
+                 Le libellé ne peut pas être une chaîne vide
+             </div> 
+             <div class="form-group">
+                    <label for="src">
+                        image du produit
+                    </label><br>
+                    <input type="file" id="src" name="src" [(ngModel)]="src" #s="ngModel" required >
+                </div>
+                 
+             <div class="form-group">
+                    <label for="prix">
+                        prix du produit
+                    </label><br>
+                    <input type="number" id="prix" name="prix" [(ngModel)]="prix" #p="ngModel" required >
+                </div>
+                   
+                <div [hidden]="p.valid||p.pristine" class="alert alert-danger">
+                    prix non valide
+                </div>
+                <div class="form-group">
+                        <label for="solde">
+                            le produit est il solde
+                        </label><br>
+                        <select id="solde"  [(ngModel)]="promo" required >
+                            <option value="true">solde de 30%</option>
+                            <option value="false">non solde</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                            <label >
+                                date d'ajout est {{myDate}}
+                            </label>
+                            
+                        </div>
+                        
+                    
+            <button type="submit" [disabled]="f.invalid"  class="btn btn-success">
+                <span class="glyphicon glyphicon-ok"></span>
+            </button>
+            <button class="btn btn-danger" (click)="f.reset(); submitted =false;">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+        </form>
+    </div>
+    <img src="../assets/ajout.PNG" id="my"/>
+     <div [hidden] ="!submitted">
+        {{message}}
+        <br/>
+        <button (click)="submitted =false; f.reset()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+        </button>
+    </div> </div>

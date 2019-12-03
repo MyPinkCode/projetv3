@@ -4,7 +4,13 @@ h1{
 }
 form{
      max-width: 800px;
-    margin: 50px;}
+    margin: 50px;
+}
 div{margin: 20px;}
-button{font-size: 30px;
-       margin-left: 200px;}
+
+button{
+    font-size: 30px;
+    margin-left: 200px;
+    }
+
+#cont{margin-top:200px}

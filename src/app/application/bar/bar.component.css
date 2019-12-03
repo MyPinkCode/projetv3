@@ -3,13 +3,14 @@
     padding: 16px;
     border: none;
   }
-  a{color: grey;
+  a{color: gray;
     font-size: 18px;
     font-family: 'Comic Sans MS', cursive;}
   
   .dropdown {
     position: relative;
     display: inline-block;
+    color: gray;
   }
   
   .dropdown-content {
@@ -31,9 +32,9 @@
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {text-decoration: underline;font-size: 25px;}
+  .dropdown:hover a {font-size: 20px;color: black;}
 
-ul{margin-top: 35px;}
+ul{margin-top: 35px;margin-left: 0px;}
   ul li {
     display: inline;
 
@@ -57,8 +58,14 @@ ul{margin-top: 35px;}
  .btn-outline-secondary{margin-left: 10px;}
  #sign{margin-left: 400px;}
  
-nav{margin: 20px;
+nav{
     display: inline-flex;
-    background-color:transparent;}
+    background-color:white;width: 100%;
+}
 h1{font-family: 'Comic Sans MS', cursive;
-   color:purple}
+   color:purple;
+  }
+   img{width: 100px;height: 100px;border-radius: 100%;}
+   hr{
+    border-top: 1px solid purple;
+  }

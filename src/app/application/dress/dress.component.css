@@ -14,3 +14,15 @@ h1{
     font-family: 'Courier New', Courier, monospace;
     text-decoration:underline;
 }
+#solde {border-radius: 100px;
+  width: 100px;height:100px;
+  background-color: plum;color: white;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  opacity: 0.65;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
+#cont{margin-top:200px}

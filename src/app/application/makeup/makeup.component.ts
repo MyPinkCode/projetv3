@@ -11,7 +11,7 @@ export class MakeupComponent implements OnInit {
   constructor(private produitService:ProduitService) { }
   
   ngOnInit() {
-   this.maq = this.produitService.makeup;
+  this.maq = this.produitService.makeup;
   }
  
 }

@@ -11,7 +11,7 @@ export class DressComponent implements OnInit {
   constructor(private produitService:ProduitService) { }
 
   ngOnInit() {
-   this.dre = this.produitService.dress;
+this.dre = this.produitService.dress;
   }
 
 }

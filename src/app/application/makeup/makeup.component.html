@@ -1,9 +1,10 @@
+<div id="cont">
 <h1>MAQUILLAGES</h1>
 <hr/>
 <ul class="list-group list-group-horizontal">
            
     <li *ngFor="let a of maq" [ngClass]="['list-group-item', 'zoom']" >
-        
+         <div id="solde"[hidden]="!a.promo">30%</div>
         <div>
             <img [src]="a.src"/>
             
@@ -13,18 +14,24 @@
                reference: {{a.ref}}
             </p>
             <hr/>
-            <div>
+            <div [hidden]="a.promo">
+                  <h3 style="color:purple;">{{a.prix |cush}}</h3>
+                  </div>
+            <div [hidden]="!a.promo">
             <h3 style="color:purple;">{{a.prix |promo |cush}}</h3>
-            <h4><del> {{a.prix |cush}}</del> </h4>
+            <h4 ><del> {{a.prix |cush}}</del> </h4>
             </div>
             
             <div class="only-show-on-hover">
                <hr/>
                   <button class="btn btn-outline-light text-secondary btn-lg" title="voir plus">
-                  <span class="glyphicon glyphicon-option-horizontal"></span>
+                        <a [routerLink]="['/makeup',a.ref]">
+                           <span class="glyphicon glyphicon-option-horizontal"></span>
+                        </a>
                </button>
             </div>
             </div>
     </li>
 
 </ul>
+</div>

@@ -1,0 +1,29 @@
+<div id="cont">
+
+<h1>{{p.nom}}</h1>
+<hr/>
+
+<button  class="btn btn-primary">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+        </button>
+  <div class="produit">      
+<img [src]="p.src"/>
+<div>
+        <p>
+                
+                reference: {{p.ref}}
+             </p>
+             <p>
+                
+                    date d'ajout: {{p.date}}
+                 </p>
+             <div [hidden]="p.promo">
+                   <h3 style="color:purple;">{{p.prix |cush}}</h3>
+                   </div>
+             <div [hidden]="!p.promo">
+             <h3 style="color:purple;">{{p.prix |promo |cush}}</h3>
+             <h4 ><del> {{p.prix |cush}}</del> </h4>
+             </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,11 @@
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration:underline;
+}
+
+    img {
+        border-radius: 100px;
+     border :2px solid plum;
+    }
+
+    #cont{margin-top:200px}

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './application/login/login.component';
@@ -12,6 +12,9 @@ import { AjoutComponent } from './application/ajout/ajout.component';
 import { RechercheComponent } from './application/recherche/recherche.component';
 import { CushPipe } from './cush.pipe';
 import { PromoPipe } from './promo.pipe';
+import { SeeMoreComponent } from './see-more/see-more.component';
+import { FooterComponent } from './application/footer/footer.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,18 @@ import { PromoPipe } from './promo.pipe';
     AjoutComponent,
     RechercheComponent,
     CushPipe,
-    PromoPipe
+    PromoPipe,
+    SeeMoreComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

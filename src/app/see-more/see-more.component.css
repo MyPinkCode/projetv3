@@ -1,0 +1,8 @@
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration:underline;
+}
+/*img{float: left;}*/
+.produit div,img{display: inline-block;}
+div {margin: 20px;font-size: 25px;}
+#cont{margin-top:200px;margin-bottom: 200px;}

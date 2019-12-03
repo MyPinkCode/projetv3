@@ -1,0 +1,42 @@
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration:underline;
+}
+#my{height: 300px;width: 300px;border-radius: 100%;
+  border:solid 3px plum;position: absolute;top:300px;left:700px
+}
+#for{
+  margin-left: 300px;
+  max-width: 250px;
+  border: 1px solid gray;
+  padding: 40px;
+  background-color: whitesmoke;
+  border-radius: 50px;}
+input{border: 1px solid gray;
+    }
+
+#s {border-radius: 100px;
+    width: 100px;height:100px;
+    background-color: plum;color: white;
+    text-align: center;
+    font-size: 50px;
+    right: 0px;
+    position: absolute;
+    opacity: 0.65;
+    top: 0px;
+    z-index: 1;
+  }
+  .zoom {
+    text-align: center;
+    transition: transform .2s; 
+    margin:0px;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.1);
+  }
+  #cont{margin-top:200px}
+  #b1{background-color: purple; border-radius: 50px;
+      margin-left: 50px;margin-top:10px ;}
+      img{max-width: 200px;max-height: 300px;}
+  

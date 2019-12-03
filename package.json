@@ -19,6 +19,11 @@
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
+    "ajax": "0.0.4",
+    "angular-bootstrap-md": "^8.7.0",
+    "bootstrap": "^4.4.1",
+    "ng2-go-top-button": "^8.0.1",
+    "ngx-lightbox": "^2.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
