@@ -1,12 +1,14 @@
+
 <div id="cont">
 
 <h1>{{p.nom}}</h1>
 <hr/>
 
-<button  class="btn btn-primary">
-            <span class="glyphicon glyphicon-arrow-left"></span>
-        </button>
-  <div class="produit">      
+  <div class="produit" [hidden]="clicked">  
+            <button (click)="back(p.ref)"  class="btn btn-primary">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                    </button>    
+                    <br>
 <img [src]="p.src"/>
 <div>
         <p>
@@ -26,4 +28,60 @@
              </div>
 </div>
 </div>
+
+<div class="produit" [hidden]="!clicked">  
+            <button (click)="clicked=false;"  class="btn btn-primary">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                    </button>    
+                    <br>
+<img [src]="p.src"/>
+<div>
+        <p>
+                
+                reference: {{p.ref}}
+             </p>
+            
+                 <label>Name: </label>
+    <input [(ngModel)]="p.nom" placeholder="name"/><br>
+                 <label>promo: </label>
+                 <select [(ngModel)]="p.promo">
+                       <option [ngValue]="true">solde</option>
+                       <option [ngValue]="false">non solde</option>
+                 </select>
+<br>
+             <div [hidden]="p.promo">
+                   <h3 style="color:purple;">{{p.prix |cush}}</h3>
+    <input [(ngModel)]="p.prix" placeholder="prix"/>
+                   </div>
+
+             <div [hidden]="!p.promo">
+             <h3 style="color:purple;">{{p.prix |promo |cush}}</h3>
+             <h4 ><del> {{p.prix |cush}}</del> </h4>
+             <input [(ngModel)]="p.prix" placeholder="prix"/>
+             </div>
+             <p>
+                
+                        date d'ajout: {{p.date}}
+                     </p>
 </div>
+</div>
+
+<div class="methodes" [hidden]="clicked">
+          <div [ngClass]="['card', 'zoom']" style="width:450px;height: 200px;" (mouseover)="see=true;"(mouseout)="see=false;">
+                  <img class="card-img-top" src="../../assets/modifier.jpg" style="width:450px;height: 200px;" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h4 class="card-title">modifier article</h4>
+                    <p class="card-text">modifier les attribut de cet article</p>
+                    <a (click)="clicked=true;" class="btn btn-primary" [hidden]="!see">modifier</a>
+                  </div>
+                </div>
+                <div [ngClass]="['card', 'zoom']" style="width:450px;height: 200px;" (mouseover)="seen=true;"(mouseout)="seen=false;">
+                        <img class="card-img-top" src="../../assets/supp.jpg" style="width:450px;height: 200px;" alt="Card image">
+                        <div class="card-img-overlay">
+                          <h4 class="card-title">supprimer article</h4>
+                          <p class="card-text">plus besoin de cet article ?</p>
+                          <a  class="btn btn-primary" [hidden]="!seen">supprimer</a>
+                        </div>
+                      </div>
+                  </div>
+</div> 

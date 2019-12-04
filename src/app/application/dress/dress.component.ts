@@ -7,11 +7,12 @@ import { ProduitService } from '../produit.service';
   styleUrls: ['./dress.component.css']
 })
 export class DressComponent implements OnInit {
-  dre :Produits[];
+  dre :any;
   constructor(private produitService:ProduitService) { }
 
   ngOnInit() {
 this.dre = this.produitService.dress;
+console.log(this.dre.length);
   }
 
 }

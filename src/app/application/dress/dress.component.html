@@ -1,7 +1,7 @@
 <div id="cont">
 <h1>ROBES</h1>
 <hr/>
-<ul class="list-group list-group-horizontal">
+<ul [ngClass]="['card-columns','list-group list-group-horizontal']">
            
     <li *ngFor="let a of dre" [ngClass]="['list-group-item', 'zoom']" >
          <div id="solde" [hidden]="!a.promo">30%</div>

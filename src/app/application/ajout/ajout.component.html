@@ -2,24 +2,24 @@
 <h1>AJOUTER UN ARTICLE</h1>
 <hr/>
 <div [hidden]="submitted" id="for"> 
-        <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                         <label for="type">
                             votre produit est un :
                             </label><br>
-                        <select id="type"[(ngModel)]="type" required >
-                            <option value="m">makeup</option>
-                            <option value="d">dress</option>
+                        <select id="type"class="form-control" formControlName="type">
+                            <option value="1">makeup</option>
+                            <option value="2">dress</option>
                         </select>
                     </div>
             <div class="form-group">
-                <label for="ref">
+                <label for="r">
                     referance du produit
                 </label><br>
-                <input type="text" id="ref" name="ref" [(ngModel)]="ref" #idf="ngModel" required >
+                <input type="text" id="r"class="form-control"formControlName="ref" required >
             </div>
                
-            <div [hidden]="idf.valid||idf.pristine" class="alert alert-danger">
+            <div *ngIf="ref.errors?.minlength && ref.dirty" class="alert alert-danger">
                 referance non valide
             </div>
             <div class="form-group">
@@ -27,37 +27,37 @@
                         nom du produit
                     </label>
                     <br>
-                    <input type="text" id="libelle" name="lib" [(ngModel)]="nom"  #lib="ngModel" required>
+                    <input type="text" id="libelle"class="form-control"formControlName="nom" required>
                 </div>
     
                <br/>   
-            <div [hidden]="lib.valid||lib.pristine" class="alert alert-danger">
+            <div *ngIf="nom.errors?.minlength && nom.dirty" class="alert alert-danger">
                  Le libellé ne peut pas être une chaîne vide
              </div> 
-             <div class="form-group">
-                    <label for="src">
+            <div class="form-group">
+                    <label for="s">
                         image du produit
                     </label><br>
-                    <input type="file" id="src" name="src" [(ngModel)]="src" #s="ngModel" required >
+                    <input type="file" id="s" class="form-control"formControlName="src" required>
                 </div>
                  
              <div class="form-group">
-                    <label for="prix">
+                    <label for="p">
                         prix du produit
                     </label><br>
-                    <input type="number" id="prix" name="prix" [(ngModel)]="prix" #p="ngModel" required >
+                    <input type="number" id="p" class="form-control" formControlName="prix" required >
                 </div>
                    
-                <div [hidden]="p.valid||p.pristine" class="alert alert-danger">
+                <div *ngIf="prix.errors?.minlength && prix.dirty" class="alert alert-danger">
                     prix non valide
                 </div>
                 <div class="form-group">
                         <label for="solde">
                             le produit est il solde
                         </label><br>
-                        <select id="solde"  [(ngModel)]="promo" required >
-                            <option value="true">solde de 30%</option>
-                            <option value="false">non solde</option>
+                        <select id="solde" class="form-control"formControlName="promo" required >
+                            <option [ngValue]="true">solde de 30%</option>
+                            <option [ngValue]="false">non solde</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -68,13 +68,20 @@
                         </div>
                         
                     
-            <button type="submit" [disabled]="f.invalid"  class="btn btn-success">
+            <button type="submit" [disabled]="productForm.invalid"  class="btn btn-success">
                 <span class="glyphicon glyphicon-ok"></span>
             </button>
-            <button class="btn btn-danger" (click)="f.reset(); submitted =false;">
+            <button class="btn btn-danger" (click)="productForm.reset(); submitted =false;">
                 <span class="glyphicon glyphicon-remove"></span>
             </button>
         </form>
+
+
+
+
+
+
+    
     </div>
     <img src="../assets/ajout.PNG" id="my"/>
      <div [hidden] ="!submitted">
@@ -83,4 +90,5 @@
         <button (click)="submitted =false; f.reset()" class="btn btn-primary">
             <span class="glyphicon glyphicon-arrow-left"></span>
         </button>
-    </div> </div>
+    </div> 
+</div>

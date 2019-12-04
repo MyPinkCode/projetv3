@@ -9,7 +9,7 @@ li{margin: 30px;}
     transform: scale(1.1); 
   }
  
-
+  ul{flex-wrap: wrap;}
 h1{
     font-family: 'Courier New', Courier, monospace;
     text-decoration:underline;

@@ -6,3 +6,13 @@ h1{
 .produit div,img{display: inline-block;}
 div {margin: 20px;font-size: 25px;}
 #cont{margin-top:200px;margin-bottom: 200px;}
+.zoom {
+    text-align: center;
+    transition: transform .2s; 
+    margin:50px;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.1);
+  }
+  .methodes div{display: inline-block;}

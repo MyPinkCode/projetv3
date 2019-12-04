@@ -1,18 +1,19 @@
-<div id="cont">
+ <div id="cont">
 <h1>RECHERCHE</h1>
 <hr/>
 <div  [hidden] ="submitted" id="for">
     
-    <form #cat="ngForm" (ngSubmit)="onSubmit(cat)">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
 
             <div class="form-group">
                     <label for="type">
                         categorie
                         </label><br>
-                    <select id="type"[(ngModel)]="type">
-                        <option value="m">makeup</option>
-                        <option value="d">dress</option>
+                    <select id="type"class="form-control" formControlName="type">
+                        <option [ngValue]="1">makeup</option>
+                        <option [ngValue]="2">dress</option>
                     </select>
+                    {{type.value}}
                 </div>
           <hr/>
         
@@ -21,8 +22,8 @@
                     nom du produit
                 </label>
                 <br>
-                <input type="text" id="libelle" name="lib" [(ngModel)]="nom"  #lib="ngModel" placeholder="nom ...">
-            </div>
+                <input type="text" id="libelle"class="form-control" formControlName="nom" placeholder="nom ...">
+           {{nom.value}} </div>
 
          <hr/>
          
@@ -30,7 +31,7 @@
                 <label for="prix">
                     prix du produit
                 </label><br>
-                <input type="number" id="prix" name="prix" [(ngModel)]="prix" #p="ngModel" placeholder="prix ..." >
+                <input type="number" id="prix" class="form-control" formControlName="prix" placeholder="prix ..." >
             </div>
                
             <hr/>
@@ -38,15 +39,15 @@
                     <label for="solde">
                         le produit est il solde
                     </label><br>
-                    <select id="solde"  [(ngModel)]="dispo" >
-                        <option value="true">solde de 30%</option>
-                        <option value="false">non solde</option>
+                    <select id="solde" class="form-control" formControlName="promo" >
+                        <option [ngValue]="true">solde de 30%</option>
+                        <option [ngValue]="false">non solde</option>
                     </select>
                 </div>
                 
                     
                 
-        <button id="b1" type="submit" [disabled]="cat.invalid" class="btn btn-outline-light text-light btn-lg">
+        <button id="b1" type="submit" (click)="recherche()" class="btn btn-outline-light text-light btn-lg">
                 <span class="glyphicon glyphicon-search"></span>
                 </button>
     </form>
@@ -125,4 +126,4 @@
             <span class="glyphicon glyphicon-arrow-left"></span>
         </button>
     </div> 
-      </div>
+      </div> 

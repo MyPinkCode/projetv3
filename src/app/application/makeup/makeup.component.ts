@@ -7,7 +7,7 @@ import { ProduitService } from '../produit.service';
   styleUrls: ['./makeup.component.css']
 })
 export class MakeupComponent implements OnInit {
-  maq :Produits[];
+  maq :any;
   constructor(private produitService:ProduitService) { }
   
   ngOnInit() {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Produits } from '../Produits';
+import { FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { ProduitService } from '../produit.service';
 @Component({
   selector: 'app-recherche',
@@ -9,17 +8,44 @@ import { ProduitService } from '../produit.service';
 })
 export class RechercheComponent implements OnInit {
   submitted:boolean = false;
-  nom:string;prix:number;promo:boolean;
-  type:string;
-  maq :Produits[];
-  dre :Produits[];
-  onSubmit(frm:NgForm)
+  productForm:FormGroup;
+ maq :any;
+  dre :any;
+  onSubmit()
   {
     this.submitted =true;}
-  constructor(private produitService:ProduitService) { }
+  constructor(private produitService:ProduitService,private formBuilder:FormBuilder) { }
 
-  ngOnInit() {this.maq = this.produitService.makeup;
+  ngOnInit() {
     this.dre = this.produitService.dress;
+    this.maq = this.produitService.makeup;
+    this.productForm = this.formBuilder.group(
+      {
+      type:['', Validators.required],
+      nom:['', [Validators.required, Validators.minLength(5)]],
+      prix:['', Validators.required],
+      promo:['', Validators.required]
+    }
+      )
   }
 
+  public get nom()
+  { return this.productForm.controls.nom; }
+
+  public get prix()
+  { return this.productForm.controls.prix; }
+
+  public get promo()
+  { return this.productForm.controls.promo; }
+  public get type()
+  { return this.productForm.controls.type; }
+  
+recherche(){
+  if(this.type.value==1){
+  this.dre=null;
+  this.maq = this.produitService.makeup;}
+  if(this.type.value==2) {
+  this.maq=null;
+  this.dre = this.produitService.dress;}
+}
 }

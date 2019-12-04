@@ -39,4 +39,4 @@ input{border: 1px solid gray;
   #b1{background-color: purple; border-radius: 50px;
       margin-left: 50px;margin-top:10px ;}
       img{max-width: 200px;max-height: 300px;}
-  
+      ul{flex-wrap: wrap;}

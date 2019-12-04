@@ -1,22 +1,27 @@
 <div id="cont">
     <h1>IDENTIFIEZ-VOUS</h1>
  <hr/>
-    <form class="form-signin" #signin="ngForm">
+    <form [formGroup]="signForm" (ngSubmit)="onSubmit()">
 
-        <div class="input-group">
+        <div class="input-group" *ngIf="!loged">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
           <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
           
         </div>
 
-        <div class="input-group">
+        <div class="input-group" *ngIf="!loged">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
           <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
           
         </div>
 
-        
-        <button type="submit" class="btn btn-outline-secondary" (click)="app()"> Sign in</button>
-        
+<p>
+  <button  type="submit" class="btn btn-outline-secondary" [disabled]="signForm.invalid" (click)="app()"  *ngIf="!loged">
+    Login
+  </button>
+  <button type="submit" class="btn btn-outline-secondary"  (click)="loged=false;" *ngIf="loged">
+    Logout
+  </button>
+</p>
       </form>
       </div>
